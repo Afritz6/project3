@@ -14,7 +14,7 @@ public class VectorScaleAttribute : PropertyAttribute
 public class VectorScaleDrawer : PropertyDrawer
 {
     public const int row = 17;
-   // float x = 0;
+    float x = 0;
     float y = 0;
     float z = 0;
 
@@ -29,15 +29,15 @@ public class VectorScaleDrawer : PropertyDrawer
         Rect sliderPosition = position;
         sliderPosition.height = row;
 
-        EditorGUILayout.LabelField("Vector 3");
+        EditorGUI.LabelField(position, "Vector 3");
 
         float x = myObj.transform.localScale.x;
         float y = myObj.transform.localScale.y;
         float z = myObj.transform.localScale.z;
 
-        x = EditorGUILayout.Slider(x, 1f, 10f);
-        y = EditorGUILayout.Slider(y, 1f, 10f);
-        z = EditorGUILayout.Slider(z, 1f, 10f);
+        x = EditorGUI.Slider(sliderPosition, x, 1f, 10f);
+        y = EditorGUI.Slider(sliderPosition, y, 1f, 10f);
+        z = EditorGUI.Slider(sliderPosition, z, 1f, 10f);
 
         myObj.transform.localScale = new Vector3(x, y, z);
     }

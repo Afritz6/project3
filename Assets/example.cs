@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class example : MonoBehaviour
 {
-   //[ColorLine]
-   [VectorScale]
-   //[SpriteShow]
+    //[ColorLine]
+    [VectorScale]
+    public GameObject myObj;
+    //[SpriteShow]
+    //public Sprite mySprite;
 }
